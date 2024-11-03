@@ -7,12 +7,18 @@ int main() {
     // declarations
     map<string, tuple<int, string, string>> villagerDetails;
 
-    villagerDetails["Drago"] = {5, "Alligator", "Snap to it!"};
-    villagerDetails["Kyle"] = {10, "Wolf", "Hubba Hubba!"};
-    villagerDetails["Raymond"] = {8, "Cat", "Nice Fit"}; 
+    villagerDetails["Drago"] = make_tuple(5, "Alligator", "Snap to it!");
+    villagerDetails["Kyle"] = make_tuple(10, "Wolf", "Hubba Hubba!");
+    villagerDetails["Raymond"] = make_tuple(8, "Cat", "Nice Fit"); 
 
+    for(auto e: villagerDetails)
+    {
+        int f = get<0>(e.second);
+        string a = get<1>(e.second);
+        string c = get<2>(e.second);
+        cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
 
-
+    }
 
     //menu
     int choice; 
@@ -24,11 +30,7 @@ int main() {
     cout<<"6. Exit"<<endl;
     cin>>choice;  
 
-    for(auto e: villagerDetails)
-    {
-        cout<<e.first<<" "<<get<int>(e.second)<<" "<<get<string>(e.second); 
-
-    }
+    
     
 
     // insert elements into the map
