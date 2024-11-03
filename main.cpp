@@ -67,7 +67,11 @@ int main() {
             break; 
 
         case 2:
-            
+            if(villagerDetails.empty())
+                cout<<"The village is empty"<<endl;
+            else
+            {
+
             for(auto e: villagerDetails)
                 {
                     int f = get<0>(e.second);
@@ -89,6 +93,7 @@ int main() {
                     string c = get<2>(e.second);
                     cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
                 }
+            }
             break; 
 
             case 3: 
@@ -140,12 +145,10 @@ int main() {
                 it = villagerDetails.find(n);
                 if(it != villagerDetails.end())
                 {
-                    cout<<"Villager Found!"<<endl;
+                    cout<<"Villager Found! "<<n<<" details: "<<endl;
+                    cout<<get<0>(villagerDetails[n])<<" "<<get<1>(villagerDetails[n])<<" "
+                    <<get<2>(villagerDetails[n])<<endl; 
                     
-                    for(auto e: villagerDetails)
-                    {
-                        cout<<n<<" "<<get<0>(e.second)<<get<1>(e.second)<<get<2>(e.second); 
-                    }
                 }
                 else 
                     cout<<n<<" not found."<<endl; 
