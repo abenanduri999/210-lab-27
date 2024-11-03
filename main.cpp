@@ -25,6 +25,8 @@ int main() {
     int choice; 
     string n, a, c;
     int f; 
+    int i = 0; 
+    int j = 0;
     auto it = villagerDetails.find(n);
 
     do{
@@ -91,37 +93,39 @@ int main() {
 
             case 3: 
                 
-                cout<<"Friendship has been increased"<<endl<<endl; 
+                cout<<"Friendship has been increased"<<" "<<endl<<endl; 
                 for(auto e: villagerDetails)
                 {
-                   // int f = get<0>(e.second);   
-                    //string a = get<1>(e.second);
-                    //string c = get<2>(e.second);
-                    
+                   int f = get<0>(e.second);   
+                   string a = get<1>(e.second);
+                   string c = get<2>(e.second);
+                   f = f + i;
+                   
                     if(f > 9)
-                        cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                        cout<<e.first<<": "<<10<<" "<<a<<" "<<c<<" "<<endl;
                     else
                         cout<<e.first<<": "<<++f<<" "<<a<<" "<<c<<" "<<endl;
-                       
-                    
+                     
                 }
+                i++;
             break;
 
             case 4: 
-            
+
                 cout<<"Friendship has been decreased"<<endl<<endl; 
                 for(auto e: villagerDetails)
                 {
                     int f = get<0>(e.second);
                     string a = get<1>(e.second);
                     string c = get<2>(e.second);
+                    f = f - j;
                     
                     if(f < 1)
-                        cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                        cout<<e.first<<": "<<0<<" "<<a<<" "<<c<<" "<<endl;
                     else
                         cout<<e.first<<": "<<--f<<" "<<a<<" "<<c<<" "<<endl;
-                       
                 }
+                j++; 
             break;
 
             case 5: 
@@ -136,8 +140,9 @@ int main() {
                 it = villagerDetails.find(n);
                 if(it != villagerDetails.end())
                 {
-                    cout<<"Villager Found!"<<endl; 
-                    for(auto e: villagerDetails )
+                    cout<<"Villager Found!"<<endl;
+                    
+                    for(auto e: villagerDetails)
                     {
                         cout<<n<<" "<<get<0>(e.second)<<get<1>(e.second)<<get<2>(e.second); 
                     }
@@ -155,11 +160,7 @@ int main() {
         }while(choice != 6);
     
 
-    // insert elements into the map
-    // note how the right-hand side of the assignment are the vector elements
-    /*villagerColors["Audie"] = {"Orange", "Yellow", "Red"};
-    villagerColors["Raymond"] = {"Black", "Gray", "White"};
-    villagerColors.insert({"Marshal", {"Blue", "White", "Black"}});*/
+    
 
     // access the map using a range-based for loop
    /* cout << "Villagers and their favorite colors (range-based for loop):" << endl;
