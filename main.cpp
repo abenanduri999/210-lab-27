@@ -100,7 +100,10 @@ int main() {
                     string a = get<1>(e.second);
                     string c = get<2>(e.second);
                     
-                    cout<<e.first<<": "<<++f<<" "<<a<<" "<<c<<" "<<endl;
+                    if(f > 9)
+                        cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                    else
+                        cout<<e.first<<": "<<++f<<" "<<a<<" "<<c<<" "<<endl;
                        
                 }
             break;
@@ -114,6 +117,22 @@ int main() {
                     cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
                 }
                 cout<<endl; 
+
+                cout<<"Friendship has been decreased"<<endl<<endl; 
+                for(auto e: villagerDetails)
+                {
+                    int f = get<0>(e.second);
+                    string a = get<1>(e.second);
+                    string c = get<2>(e.second);
+                    
+                    if(f < 1)
+                        cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                    else
+                        cout<<e.first<<": "<<--f<<" "<<a<<" "<<c<<" "<<endl;
+                       
+                }
+            break;
+                
 
     }
     
