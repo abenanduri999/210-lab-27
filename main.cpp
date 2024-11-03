@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <tuple>
+#include <string>
 using namespace std;
 
 int main() {
@@ -17,9 +18,8 @@ int main() {
         string a = get<1>(e.second);
         string c = get<2>(e.second);
         cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
-
     }
-
+    cout<<endl; 
     //menu
     int choice; 
     cout<<"1. Add Villager"<<endl; 
@@ -28,9 +28,27 @@ int main() {
     cout<<"4. Decrease Friendship"<<endl; 
     cout<<"5. Search for Villager"<<endl; 
     cout<<"6. Exit"<<endl;
-    cin>>choice;  
+    cin>>choice; 
+    cin.ignore();  
 
-    
+    switch(choice)
+    {
+        case 1: 
+            string n, a, c;
+            int f; 
+            cout<<"Villagers Name: ";
+            getline(cin, n);  
+            cout<<"Friendship Level: "; 
+            cin>>f; 
+            cin.ignore(); 
+            cout<<"Species: "; 
+            getline(cin, a); 
+            cin.ignore(); 
+            cout<<"Catchphrase: "; 
+            getline(cin, c); 
+            cout<<n<<" added."<<endl;
+
+    }
     
 
     // insert elements into the map
