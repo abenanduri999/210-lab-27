@@ -30,6 +30,7 @@ int main() {
     cout<<"6. Exit"<<endl;
     cin>>choice; 
     cin.ignore();  
+    cout<<endl; 
 
     switch(choice)
     {
@@ -55,6 +56,9 @@ int main() {
                     string c = get<2>(e.second);
                     cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
                 }
+            break; 
+
+        
 
     }
     
