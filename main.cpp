@@ -32,11 +32,12 @@ int main() {
     cin.ignore();  
     cout<<endl; 
 
+    string n, a, c;
+    int f; 
     switch(choice)
     {
         case 1: 
-            string n, a, c;
-            int f; 
+            
             cout<<"Villagers Name: ";
             getline(cin, n);  
             cout<<"Friendship Level: "; 
@@ -58,7 +59,34 @@ int main() {
                 }
             break; 
 
-        
+        case 2:
+            
+            for(auto e: villagerDetails)
+                {
+                    int f = get<0>(e.second);
+                    string a = get<1>(e.second);
+                    string c = get<2>(e.second);
+                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                }
+            cout<<endl; 
+            cout<<"Enter the name of the villager you would like to delete(case sensitive): "; 
+            getline(cin, n); 
+            villagerDetails.erase(n); 
+
+            cout<<endl; 
+
+            for(auto e: villagerDetails)
+                {
+                    int f = get<0>(e.second);
+                    string a = get<1>(e.second);
+                    string c = get<2>(e.second);
+                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                }
+            break; 
+
+            case 3: 
+
+                cout<<"Friendship has been increased"<<endl; 
 
     }
     
