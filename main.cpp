@@ -43,10 +43,18 @@ int main() {
             cin.ignore(); 
             cout<<"Species: "; 
             getline(cin, a); 
-            cin.ignore(); 
             cout<<"Catchphrase: "; 
             getline(cin, c); 
-            cout<<n<<" added."<<endl;
+            villagerDetails.insert({n, {f, a, c}});
+            cout<<n<<" added."<<endl<<endl;
+
+            for(auto e: villagerDetails)
+                {
+                    int f = get<0>(e.second);
+                    string a = get<1>(e.second);
+                    string c = get<2>(e.second);
+                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                }
 
     }
     
