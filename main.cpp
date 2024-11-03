@@ -109,6 +109,7 @@ int main() {
             break;
 
             case 4: 
+
                 for(auto e: villagerDetails)
                 {
                     int f = get<0>(e.second);
@@ -132,6 +133,26 @@ int main() {
                        
                 }
             break;
+
+            case 5: 
+
+                for(auto e: villagerDetails)
+                {
+                    cout<<e.first<<", "; 
+                }
+                cout<<"Which villager's details would you like to search for?"<<endl; 
+                getline(cin, n); 
+                auto it = villagerDetails.find(n); 
+                if(it != villagerDetails.end())
+                {
+                    cout<<"Villager Found!"<<endl; 
+                    for(auto e: villagerDetails )
+                    {
+                        cout<<n<<" "<<get<0>(e.second)<<get<1>(e.second)<<get<2>(e.second); 
+                    }
+                }
+
+
                 
 
     }
