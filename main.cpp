@@ -85,8 +85,35 @@ int main() {
             break; 
 
             case 3: 
+                for(auto e: villagerDetails)
+                {
+                    int f = get<0>(e.second);
+                    string a = get<1>(e.second);
+                    string c = get<2>(e.second);
+                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                }
+                cout<<endl; 
+                cout<<"Friendship has been increased"<<endl<<endl; 
+                for(auto e: villagerDetails)
+                {
+                    int f = get<0>(e.second);
+                    string a = get<1>(e.second);
+                    string c = get<2>(e.second);
+                    
+                    cout<<e.first<<": "<<++f<<" "<<a<<" "<<c<<" "<<endl;
+                       
+                }
+            break;
 
-                cout<<"Friendship has been increased"<<endl; 
+            case 4: 
+                for(auto e: villagerDetails)
+                {
+                    int f = get<0>(e.second);
+                    string a = get<1>(e.second);
+                    string c = get<2>(e.second);
+                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                }
+                cout<<endl; 
 
     }
     
