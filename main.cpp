@@ -21,19 +21,24 @@ int main() {
     }
     cout<<endl; 
     //menu
+     
     int choice; 
-    cout<<"1. Add Villager"<<endl; 
-    cout<<"2. Delete Villager"<<endl; 
-    cout<<"3. Increase Friendship"<<endl; 
-    cout<<"4. Decrease Friendship"<<endl; 
-    cout<<"5. Search for Villager"<<endl; 
-    cout<<"6. Exit"<<endl;
-    cin>>choice; 
-    cin.ignore();  
-    cout<<endl; 
-
     string n, a, c;
     int f; 
+    auto it = villagerDetails.find(n);
+
+    do{
+        
+        cout<<"1. Add Villager"<<endl; 
+        cout<<"2. Delete Villager"<<endl; 
+        cout<<"3. Increase Friendship"<<endl; 
+        cout<<"4. Decrease Friendship"<<endl; 
+        cout<<"5. Search for Villager"<<endl; 
+        cout<<"6. Exit"<<endl;
+        cin>>choice; 
+        cin.ignore();  
+        cout<<endl; 
+
     switch(choice)
     {
         case 1: 
@@ -85,25 +90,19 @@ int main() {
             break; 
 
             case 3: 
-                for(auto e: villagerDetails)
-                {
-                    int f = get<0>(e.second);
-                    string a = get<1>(e.second);
-                    string c = get<2>(e.second);
-                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
-                }
-                cout<<endl; 
+                
                 cout<<"Friendship has been increased"<<endl<<endl; 
                 for(auto e: villagerDetails)
                 {
                     int f = get<0>(e.second);
+                    int counter = f;    
                     string a = get<1>(e.second);
                     string c = get<2>(e.second);
                     
-                    if(f > 9)
+                    if(counter > 9)
                         cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
                     else
-                        cout<<e.first<<": "<<++f<<" "<<a<<" "<<c<<" "<<endl;
+                        cout<<e.first<<": "<<++counter<<" "<<a<<" "<<c<<" "<<endl;
                        
                 }
             break;
@@ -140,9 +139,10 @@ int main() {
                 {
                     cout<<e.first<<", "; 
                 }
+                cout<<endl;
                 cout<<"Which villager's details would you like to search for?"<<endl; 
                 getline(cin, n); 
-                auto it = villagerDetails.find(n); 
+                it = villagerDetails.find(n);
                 if(it != villagerDetails.end())
                 {
                     cout<<"Villager Found!"<<endl; 
@@ -151,11 +151,16 @@ int main() {
                         cout<<n<<" "<<get<0>(e.second)<<get<1>(e.second)<<get<2>(e.second); 
                     }
                 }
+                else 
+                    cout<<n<<" not found."<<endl; 
 
+            break;
 
-                
+            case 6: 
+                break;
 
-    }
+        } 
+        }while(choice != 6);
     
 
     // insert elements into the map
