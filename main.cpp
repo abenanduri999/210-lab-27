@@ -13,6 +13,7 @@ int main() {
 
 
 
+
     //menu
     int choice; 
     cout<<"1. Add Villager"<<endl; 
@@ -23,7 +24,11 @@ int main() {
     cout<<"6. Exit"<<endl;
     cin>>choice;  
 
+    for(auto e: villagerDetails)
+    {
+        cout<<e.first<<" "<<get<int>(e.second)<<" "<<get<string>(e.second); 
 
+    }
     
 
     // insert elements into the map
