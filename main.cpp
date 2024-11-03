@@ -94,30 +94,21 @@ int main() {
                 cout<<"Friendship has been increased"<<endl<<endl; 
                 for(auto e: villagerDetails)
                 {
-                    int f = get<0>(e.second);
-                    int counter = f;    
-                    string a = get<1>(e.second);
-                    string c = get<2>(e.second);
+                   // int f = get<0>(e.second);   
+                    //string a = get<1>(e.second);
+                    //string c = get<2>(e.second);
                     
-                    if(counter > 9)
+                    if(f > 9)
                         cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
                     else
-                        cout<<e.first<<": "<<++counter<<" "<<a<<" "<<c<<" "<<endl;
+                        cout<<e.first<<": "<<++f<<" "<<a<<" "<<c<<" "<<endl;
                        
+                    
                 }
             break;
 
             case 4: 
-
-                for(auto e: villagerDetails)
-                {
-                    int f = get<0>(e.second);
-                    string a = get<1>(e.second);
-                    string c = get<2>(e.second);
-                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
-                }
-                cout<<endl; 
-
+            
                 cout<<"Friendship has been decreased"<<endl<<endl; 
                 for(auto e: villagerDetails)
                 {
@@ -160,6 +151,7 @@ int main() {
                 break;
 
         } 
+         
         }while(choice != 6);
     
 
