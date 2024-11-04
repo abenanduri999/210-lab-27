@@ -17,7 +17,7 @@ int main() {
         int f = get<0>(e.second);
         string a = get<1>(e.second);
         string c = get<2>(e.second);
-        cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+        cout<<e.first<<": ["<<f<<", "<<a<<", "<<c<<" ]"<<endl;
     }
     cout<<endl; 
     //menu
@@ -62,7 +62,7 @@ int main() {
                     int f = get<0>(e.second);
                     string a = get<1>(e.second);
                     string c = get<2>(e.second);
-                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                    cout<<e.first<<": ["<<f<<", "<<a<<", "<<c<<" ]"<<endl;
                 }
             break; 
 
@@ -77,7 +77,7 @@ int main() {
                     int f = get<0>(e.second);
                     string a = get<1>(e.second);
                     string c = get<2>(e.second);
-                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                    cout<<e.first<<": ["<<f<<", "<<a<<", "<<c<<" ]"<<endl;
                 }
             cout<<endl; 
             cout<<"Enter the name of the villager you would like to delete(case sensitive): "; 
@@ -91,7 +91,7 @@ int main() {
                     int f = get<0>(e.second);
                     string a = get<1>(e.second);
                     string c = get<2>(e.second);
-                    cout<<e.first<<": "<<f<<" "<<a<<" "<<c<<" "<<endl;
+                    cout<<e.first<<": ["<<f<<", "<<a<<", "<<c<<" ]"<<endl;
                 }
             }
             break; 
@@ -107,9 +107,9 @@ int main() {
                    f = f + i;
                    
                     if(f > 9)
-                        cout<<e.first<<": "<<10<<" "<<a<<" "<<c<<" "<<endl;
+                        cout<<e.first<<": ["<<10<<", "<<a<<", "<<c<<" ]"<<endl;
                     else
-                        cout<<e.first<<": "<<++f<<" "<<a<<" "<<c<<" "<<endl;
+                        cout<<e.first<<": ["<<++f<<", "<<a<<", "<<c<<" ]"<<endl;
                      
                 }
                 i++;
@@ -126,9 +126,9 @@ int main() {
                     f = f - j;
                     
                     if(f < 1)
-                        cout<<e.first<<": "<<0<<" "<<a<<" "<<c<<" "<<endl;
+                        cout<<e.first<<": ["<<0<<", "<<a<<", "<<c<<" ]"<<endl;
                     else
-                        cout<<e.first<<": "<<--f<<" "<<a<<" "<<c<<" "<<endl;
+                        cout<<e.first<<": ["<<--f<<", "<<a<<", "<<c<<" ]"<<endl;
                 }
                 j++; 
             break;
@@ -162,48 +162,5 @@ int main() {
          
         }while(choice != 6);
     
-
-    
-
-    // access the map using a range-based for loop
-   /* cout << "Villagers and their favorite colors (range-based for loop):" << endl;
-    for (auto pair : villagerDetails) {
-        cout << pair.first << ": ";
-        for (auto color : pair.second)
-            cout << color << " ";
-        cout << endl;
-    }
-
-    // access the map using iterators
-    cout << "\nVillagers and their favorite colors (iterators):" << endl;
-    for (map<string, tuple<int, string, string>>::iterator it = villagerDetails.begin(); 
-                                               it != villagerDetails.end(); ++it) {
-        cout << it->first << ": ";
-        for (auto color : it->second) {
-            cout << color << " ";
-        }
-        cout << endl;
-    }
-
-    // delete an element
-    villagerDetails.erase("Raymond");
-
-    // search for an element using .find() to avoid errors
-    string searchKey = "Audie";
-    auto it = villagerDetails.find(searchKey);
-    if (it != villagerDetails.end()) {  // the iterator points to beyond the end of the map
-                                       // if searchKey is not found
-        cout << "\nFound " << searchKey << "'s favorite colors: ";
-        for (auto color : it->second)  // range loop to traverse the value/vector
-            cout << color << " ";
-        cout << endl;
-    } else
-        cout << endl << searchKey << " not found." << endl;
-
-    // report size, clear, report size again to confirm map operations
-    cout << "\nSize before clear: " << villagerDetails.size() << endl;
-    villagerDetails.clear();
-    cout << "Size after clear: " << villagerDetails.size() << endl; */
-
     return 0;
 }
