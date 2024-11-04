@@ -104,7 +104,7 @@ int main() {
                    int f = get<0>(e.second);   
                    string a = get<1>(e.second);
                    string c = get<2>(e.second);
-                   f = f + i;
+                   f = f + i - j;
                    
                     if(f > 9)
                         cout<<e.first<<": ["<<10<<", "<<a<<", "<<c<<" ]"<<endl;
@@ -123,7 +123,7 @@ int main() {
                     int f = get<0>(e.second);
                     string a = get<1>(e.second);
                     string c = get<2>(e.second);
-                    f = f - j;
+                    f = f - j + i;
                     
                     if(f < 1)
                         cout<<e.first<<": ["<<0<<", "<<a<<", "<<c<<" ]"<<endl;
